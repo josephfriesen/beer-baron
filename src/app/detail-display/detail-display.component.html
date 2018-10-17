@@ -1,0 +1,12 @@
+<div *ngIf="kegToShow" class="container detail-display">
+  <div class="keg-top">
+    <div class="keg-details">
+      <h3>{{kegToShow.name}}</h3>
+      <p>{{kegToShow.style}}, by {{kegToShow.brewery}}<p>
+      <p>{{kegToShow.price | currency}} &nbsp; &nbsp; {{kegToShow.pintsLeft}}</p>
+    </div>
+    <div class="keg-image">
+      <img src="{{kegToShow.img}}">
+    </div>
+  </div>
+</div>

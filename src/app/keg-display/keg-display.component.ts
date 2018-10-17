@@ -10,7 +10,7 @@ import { kegs } from '../models/mock-kegs';
 export class KegDisplayComponent implements OnInit {
 
   inventory = kegs;
-  selectedKeg: number;
+  selectedKeg: Keg;
 
   log(arg): void {
     console.log(arg);
@@ -19,7 +19,6 @@ export class KegDisplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.inventory);
   }
 
   @Input() employeeView: boolean;

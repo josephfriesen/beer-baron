@@ -4,6 +4,8 @@
 
 <div class="keg-list">
   <ul>
-    <li *ngFor="let keg of inventory"><a href="#" (click)="selectedKeg = keg.id; log(selectedKeg)">{{keg.name}}</a></li>
+    <li *ngFor="let keg of inventory"><a [class.none-left]="keg.pintsLeft == 0" href="#" (click)="selectedKeg = keg">{{keg.name}}</a></li>
   </ul>
 </div>
+
+<detail-display [kegToShow]="selectedKeg"></detail-display>

@@ -1,0 +1,32 @@
+.detail-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ffd699;
+  border: 1px solid black;
+  box-shadow: 0 0 1px 2px grey;
+  padding: 20px;
+}
+
+.keg-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.keg-image img {
+  height: 150px;
+  border: 1px solid grey;
+  box-shadow: 0 0 1px 1px;
+}
+
+.keg-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.keg-details p {
+  margin: 0;
+}

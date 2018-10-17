@@ -6,3 +6,7 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.none-left {
+  text-decoration: line-through;
+}
