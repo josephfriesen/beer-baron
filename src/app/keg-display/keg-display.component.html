@@ -3,9 +3,31 @@
 </div>
 
 <div class="keg-list">
+  <div class="add-a-keg" *ngIf="employeeView">
+    <button (click)="log('Add a keg')" type="button" class="button btn btn-primary btn-sm">
+      Add a new keg
+    </button>
+  </div>
   <ul>
-    <li *ngFor="let keg of inventory"><a [class.none-left]="keg.pintsLeft == 0" href="#" (click)="selectedKeg = keg">{{keg.name}}</a></li>
+    <li *ngFor="let keg of inventory">
+      <a [class.none-left]="keg.pintsLeft == 0" [class.warning]="keg.pintsLeft <= 10 && employeeView" href="#" (click)="selectedKeg = keg">
+        {{keg.name}}
+      </a><br>
+      <button *ngIf="employeeView && keg.pintsLeft > 0" (click)="sellAPint(keg)" type="button" class="button btn btn-sm btn-info">
+        Sold a pint
+      </button>
+      <button *ngIf="employeeView" (click)="keg.pintsLeft = 124" type="button" class="button btn btn-sm btn-success">
+        Restock
+      </button>
+      <button *ngIf="employeeView" (click)="editKeg = keg; selectedKeg = keg" type="button" class="button btn btn-sm btn-warning">
+        Edit info
+      </button>
+      <button *ngIf="employeeView" (click)="deleteThisKeg(keg)" type="button" class="button btn btn-sm btn-danger">
+        Delete
+      </button>
+    </li>
   </ul>
 </div>
 
+<edit-keg *ngIf="editKeg" [keg]="editKeg"></edit-keg>
 <detail-display [kegToShow]="selectedKeg"></detail-display>

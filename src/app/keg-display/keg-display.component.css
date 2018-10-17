@@ -7,6 +7,19 @@ a {
   text-decoration: none;
 }
 
+.add-a-keg {
+  display: flex;
+  justify-content: center;
+}
+
 .none-left {
   text-decoration: line-through;
+}
+
+.warning {
+  color: red;
+}
+
+button {
+  margin: 0 5px;
 }

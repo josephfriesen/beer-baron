@@ -30,3 +30,10 @@
 .keg-details p {
   margin: 0;
 }
+
+.keg-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+}

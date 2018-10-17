@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
 import { kegs } from '../models/mock-kegs';
 
@@ -11,6 +11,7 @@ export class KegDisplayComponent implements OnInit {
 
   inventory = kegs;
   selectedKeg: Keg;
+  editKeg: Keg;
 
   log(arg): void {
     console.log(arg);
@@ -22,6 +23,20 @@ export class KegDisplayComponent implements OnInit {
   }
 
   @Input() employeeView: boolean;
+
+  @Output() editAKeg = new EventEmitter();
+
+  editKegClicked(kegToEdit: Keg) {
+    this.editAKeg.emit(kegToEdit)
+  }
+
+  sellAPint(keg): void {
+    keg.pintsLeft = keg.pintsLeft - 1;
+  }
+
+  deleteThisKeg(keg): void {
+    this.inventory.splice(this.inventory.indexOf(keg), 1);
+  }
 
 
 }

@@ -3,7 +3,20 @@
     <div class="keg-details">
       <h3>{{kegToShow.name}}</h3>
       <p>{{kegToShow.style}}, by {{kegToShow.brewery}}<p>
-      <p>{{kegToShow.price | currency}} &nbsp; &nbsp; {{kegToShow.pintsLeft}}</p>
+      <div class="keg-footer">
+        <div class="footer-item">
+          <p>{{kegToShow.price | currency}}</p>
+        </div>
+        <div class="footer-item">
+          <p>{{kegToShow.abv | percent:'1.2-2'}}</p>
+        </div>
+        <div *ngIf="kegToShow.pintsLeft" class="footer-item">
+          <p><span *ngIf="kegToShow.pintsLeft <= 10">Only</span> {{kegToShow.pintsLeft}} pints left</p>
+        </div>
+        <div *ngIf="!kegToShow.pintsLeft" class="footer-item">
+          <p>Tapped out, sorry!</p>
+        </div>
+      </div>
     </div>
     <div class="keg-image">
       <img src="{{kegToShow.img}}">

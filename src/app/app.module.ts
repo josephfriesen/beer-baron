@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { KegDisplayComponent } from './keg-display/keg-display.component';
 import { DetailDisplayComponent } from './detail-display/detail-display.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DetailDisplayComponent } from './detail-display/detail-display.componen
     AppComponent,
     HeaderComponent,
     KegDisplayComponent,
-    DetailDisplayComponent
+    DetailDisplayComponent,
+    EditKegComponent
   ],
   imports: [
     BrowserModule
