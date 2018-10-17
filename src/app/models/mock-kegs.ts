@@ -1,8 +1,9 @@
 import { Keg } from './keg.model';
 
-export const kegs = [
+export let kegs = [
 
   new Keg(
+    1,
     'Pabst Blue Ribbon',
     3.00,
     'Pabst Brewing Company',
@@ -12,6 +13,7 @@ export const kegs = [
   ),
 
   new Keg(
+    2,
     'Tecate',
     3.00,
     'Cervecería Cuauhtémoc Moctezuma, S.A. de C.V.',
@@ -21,6 +23,7 @@ export const kegs = [
   ),
 
   new Keg(
+    3,
     'Olde English 800',
     1.50,
     'Miller Brewing Company',
@@ -30,6 +33,7 @@ export const kegs = [
   ),
 
   new Keg(
+    4,
     'Hurricane High Gravity Malt Liquor',
     1.00,
     'Anheuser-Busch',
@@ -39,6 +43,7 @@ export const kegs = [
   ),
 
   new Keg(
+    5,
     'King Cobra Premium Malt Liquor',
     1.50,
     'Anheuser-Busch',
@@ -48,6 +53,7 @@ export const kegs = [
   ),
 
   new Keg(
+    6,
     'Rocket Fuel Malt Liquor',
     2.00,
     'Northrop-Grumman Corporation',
@@ -57,6 +63,7 @@ export const kegs = [
   ),
 
   new Keg(
+    7,
     'Beer Baron\'s Disgusting Ultrabitter Hop Explosion',
     6.50,
     'Beer Baron Brewing',

@@ -13,17 +13,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.employeeView = false;
-    console.log(this.employeeView)
   }
 
   toggle(): void {
-    console.log('click!');
     if (this.employeeView) {
       this.employeeView = false;
     } else {
       this.employeeView = true;
     }
-    console.log(this.employeeView);
   }
 
 }

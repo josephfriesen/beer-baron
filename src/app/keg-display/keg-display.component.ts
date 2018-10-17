@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Keg } from '../models/keg.model';
+import { kegs } from '../models/mock-kegs';
 
 @Component({
   selector: 'keg-display',
@@ -7,11 +9,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class KegDisplayComponent implements OnInit {
 
+  inventory = kegs;
+  selectedKeg: number;
+
+  log(arg): void {
+    console.log(arg);
+  }
+
   constructor() { }
 
   ngOnInit() {
+    console.log(this.inventory);
   }
 
   @Input() employeeView: boolean;
+
 
 }
