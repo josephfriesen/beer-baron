@@ -4,7 +4,7 @@
 
 <div class="keg-list">
   <div class="add-a-keg" *ngIf="employeeView">
-    <button (click)="log('Add a keg')" type="button" class="button btn btn-primary btn-sm">
+    <button (click)="newKeg = true" type="button" class="button btn btn-primary btn-sm">
       Add a new keg
     </button>
   </div>
@@ -30,4 +30,5 @@
 </div>
 
 <edit-keg *ngIf="editKeg" [keg]="editKeg" (editFinished)="editKeg = null"></edit-keg>
+<add-keg *ngIf="newKeg" (addFinished)="addKeg($event)"></add-keg>
 <detail-display [kegToShow]="selectedKeg"></detail-display>

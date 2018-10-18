@@ -1,5 +1,5 @@
 export class Keg {
-  // id: number;
+  id: number;
   name: string;
   price: number;
   brewery: string;
@@ -8,7 +8,7 @@ export class Keg {
   pintsLeft: number;
   img: string;
 
-  constructor(public id: number, name, price, brewery, abv, style, pints, img) {
+  constructor(id, name, price, brewery, abv, style, pints, img) {
     this.id = id;
     this.name = name;
     this.price = price.toFixed(2);

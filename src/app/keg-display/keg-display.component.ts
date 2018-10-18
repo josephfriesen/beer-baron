@@ -12,6 +12,7 @@ export class KegDisplayComponent implements OnInit {
   inventory = kegs;
   selectedKeg: Keg;
   editKeg: Keg;
+  newKeg: boolean = false;
 
   log(arg): void {
     console.log(arg);
@@ -28,6 +29,11 @@ export class KegDisplayComponent implements OnInit {
 
   editKegClicked(kegToEdit: Keg) {
     this.editAKeg.emit(kegToEdit)
+  }
+
+  addKeg(keg: Keg) {
+    this.inventory.push(keg);
+    this.newKeg = false;
   }
 
   sellAPint(keg): void {

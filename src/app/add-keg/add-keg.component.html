@@ -1,3 +1,33 @@
-<p>
-  add-keg works!
-</p>
+<div class="overlay">
+  <div class="edit-panel">
+    <div>
+      <h3>Adding new keg {{keg.name}}</h3>
+    </div>
+    <form>
+      <div>
+        <p>Name: <input type="text" [(ngModel)]="keg.name" name="kegname" size="40"></p>
+      </div>
+      <div>
+        <p>Style: <input type="text" [(ngModel)]="keg.style" name="kegstyle" size="40"></p>
+      </div>
+      <div>
+        <p>Brewery: <input type="text" [(ngModel)]="keg.brewery" name="kegbrewery" size="40"></p>
+      </div>
+      <div>
+        <p>Price per pint (Format number X.xx): <input type="text" [(ngModel)]="keg.price" name="kegprice" size="8"></p>
+      </div>
+      <div>
+        <p>ABV (Format number 0.xxxx): <input type="text" [(ngModel)]="keg.abv" name="kegabv" size="8"></p>
+      </div>
+      <div>
+        <p>Pints remaining (124 for a full keg): <input type="text" [(ngModel)]="keg.pintsLeft" name="kegpints" size="8"></p>
+      </div>
+      <div>
+        <p>Image URL: <input type="text" [(ngModel)]="keg.img" name="kegimg" size="80"></p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-sm btn-info" (click)="allDone(keg)">Done</button>
+      </div>
+    </form>
+  </div>
+</div>
