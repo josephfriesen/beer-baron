@@ -5,7 +5,7 @@
   <div class="filtering">
     <label><h5>Pick a beer style: </h5></label>
     <select (change)="onChange($event.target.value)">
-      <option value="all">Lemme see what you've got</option>
+      <option selected value="all">Lemme see em all</option>
       <option *ngFor="let style of allStyles" value="{{style}}">{{style}}</option>
     </select>
   </div>
@@ -22,8 +22,9 @@
     </button>
   </div>
   <ul>
-    <li *ngFor="let keg of inventory | styleFilter:selectedStyle">
-      <a [class.none-left]="keg.pintsLeft == 0" [class.warning]="keg.pintsLeft <= 10 && employeeView" href="#" (click)="selectedKeg = keg">
+    <li *ngFor="let keg of inventory | styleFilter:selectedStyle" [class.employee-list-item]="employeeView">
+      <a [class.none-left]="keg.pintsLeft == 0"
+      [class.active-beer]="keg.name === activeName" [class.warning]="keg.pintsLeft <= 10 && employeeView" href="#" (click)="selectedKeg = keg; activeName = keg.name">
         {{keg.name}}
       </a><br>
       <button *ngIf="employeeView && keg.pintsLeft > 0" (click)="sellAPint(keg)" type="button" class="button btn btn-sm btn-info">

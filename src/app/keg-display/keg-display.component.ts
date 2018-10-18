@@ -17,6 +17,7 @@ export class KegDisplayComponent implements OnInit {
   patronSearch: boolean = false;
   allStyles: string[] = this.updateStyles();
   selectedStyle: string = "all";
+  activeName: string = '';
 
   log(arg): void {
     console.log(arg);
@@ -60,7 +61,6 @@ export class KegDisplayComponent implements OnInit {
 
   onChange(option) {
     this.selectedStyle = option;
-    this.log(this.selectedStyle);
   }
 
 }

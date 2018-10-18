@@ -22,7 +22,7 @@ import { StyleFilterPipe } from './style-filter.pipe';
     StyleFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
     FormsModule
   ],
   providers: [],

@@ -7,6 +7,16 @@ a {
   text-decoration: none;
 }
 
+li.employee-list-item {
+  margin-bottom: 10px;
+}
+
+.active-beer {
+  font-style: bolder;
+  font-size: 1.2rem;
+  color: red;
+}
+
 .add-a-keg {
   display: flex;
   justify-content: center;
@@ -32,6 +42,7 @@ button {
   margin: 20px auto;
   border: 1px solid black;
   padding: 20px;
+  background-color: red;
 }
 
 .user-search div {
