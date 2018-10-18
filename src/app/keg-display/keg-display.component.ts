@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
 import { kegs } from '../models/mock-kegs';
+import { StyleFilterPipe } from '../style-filter.pipe';
 
 @Component({
   selector: 'keg-display',
@@ -13,6 +14,9 @@ export class KegDisplayComponent implements OnInit {
   selectedKeg: Keg;
   editKeg: Keg;
   newKeg: boolean = false;
+  patronSearch: boolean = false;
+  allStyles: string[] = this.updateStyles();
+  selectedStyle: string = "all";
 
   log(arg): void {
     console.log(arg);
@@ -44,5 +48,19 @@ export class KegDisplayComponent implements OnInit {
     this.inventory.splice(this.inventory.indexOf(keg), 1);
   }
 
+  updateStyles(): string[] {
+    let out: string[] = [];
+    this.inventory.forEach(keg => {
+      if (out.indexOf(keg.style) === -1) {
+        out.push(keg.style);
+      }
+    })
+    return out;
+  }
+
+  onChange(option) {
+    this.selectedStyle = option;
+    this.log(this.selectedStyle);
+  }
 
 }

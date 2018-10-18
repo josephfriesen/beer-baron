@@ -23,3 +23,17 @@ a {
 button {
   margin: 0 5px;
 }
+
+.user-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  margin: 20px auto;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.user-search div {
+  margin: 5px 0;
+}

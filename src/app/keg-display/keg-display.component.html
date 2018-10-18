@@ -1,3 +1,16 @@
+<div class="user-search" *ngIf="!employeeView">
+  <div class="salutation">
+    <h4>Hey there haven't seen you around here before what can I getcha?</h4>
+  </div>
+  <div class="filtering">
+    <label><h5>Pick a beer style: </h5></label>
+    <select (change)="onChange($event.target.value)">
+      <option value="all">Lemme see what you've got</option>
+      <option *ngFor="let style of allStyles" value="{{style}}">{{style}}</option>
+    </select>
+  </div>
+</div>
+
 <div class="header">
   <h3>What's On Tap</h3>
 </div>
@@ -9,7 +22,7 @@
     </button>
   </div>
   <ul>
-    <li *ngFor="let keg of inventory">
+    <li *ngFor="let keg of inventory | styleFilter:selectedStyle">
       <a [class.none-left]="keg.pintsLeft == 0" [class.warning]="keg.pintsLeft <= 10 && employeeView" href="#" (click)="selectedKeg = keg">
         {{keg.name}}
       </a><br>

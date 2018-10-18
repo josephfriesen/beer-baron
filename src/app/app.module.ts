@@ -8,6 +8,7 @@ import { KegDisplayComponent } from './keg-display/keg-display.component';
 import { DetailDisplayComponent } from './detail-display/detail-display.component';
 import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { AddKegComponent } from './add-keg/add-keg.component';
+import { StyleFilterPipe } from './style-filter.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddKegComponent } from './add-keg/add-keg.component';
     KegDisplayComponent,
     DetailDisplayComponent,
     EditKegComponent,
-    AddKegComponent
+    AddKegComponent,
+    StyleFilterPipe
   ],
   imports: [
     BrowserModule
