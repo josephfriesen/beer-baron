@@ -29,5 +29,5 @@
   </ul>
 </div>
 
-<edit-keg *ngIf="editKeg" [keg]="editKeg"></edit-keg>
+<edit-keg *ngIf="editKeg" [keg]="editKeg" (editFinished)="editKeg = null"></edit-keg>
 <detail-display [kegToShow]="selectedKeg"></detail-display>

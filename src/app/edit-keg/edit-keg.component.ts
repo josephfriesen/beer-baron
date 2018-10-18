@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
 import { kegs } from '../models/mock-kegs';
 
@@ -16,5 +16,10 @@ export class EditKegComponent implements OnInit {
   }
 
   @Input() keg: Keg;
+  @Output() editFinished = new EventEmitter();
+
+  allDone() {
+    this.editFinished.emit();
+  }
 
 }
